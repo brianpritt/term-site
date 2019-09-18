@@ -1,0 +1,32 @@
+a, ::placeholder {
+    color:rgb(255,176,0);
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    color:rgba(255,176,0, 0.8);
+    
+    height:100%;
+}
+*{
+    color:rgba(255,176,0,0.8);
+    background-color: black;
+}
+#output{
+    background-color: black;
+}
+input, input:focus {
+    border: none!important;
+    box-shadow: none!important;
+    size: 14px;
+    font-size: 14px;
+    display:inline-block!important;
+}
+button{
+    display:none;
+}
+li{
+    list-style: none;
+}
+.prompt{
+    display:inline-block!important;
+}
