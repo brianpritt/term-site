@@ -24,11 +24,15 @@ export class Session{
     // how can this be more precise?
     keyCommands(){ 
         console.log(this.keyDirection)
+        
         if(this.keyDirection === 38){
             let ret = this.prevCom[this.prevCom.length - this.count];
             this.count++;
             if (this.count >= this.prevCom.length){
                 this.count = this.prevCom.length;
+            }
+            if(this.count <=1){
+                return "";
             }
             return ret;
         }

@@ -1,0 +1,6 @@
+author: Brian Pritt
+title: Instructor | Developer
+location: Portland, Ore.
+github: brianpritt
+about: ""
+gafaw: huh
