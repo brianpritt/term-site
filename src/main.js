@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault()
     thisSession.curCom = document.getElementById("black").value.toLowerCase();
     var retu = "@localhost:: "+ thisSession.curCom+ " : <br> " + thisSession.getCommand()+ "<br>";
+    console.log(retu)
     var node = document.createElement("LI");
     var text = document.createTextNode(retu);
     var out = document.getElementById("output");

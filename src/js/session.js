@@ -1,25 +1,33 @@
+import txt from './../commands.txt'
 export class Session{
+
     constructor(){
         this.keyDirection = 0;
         this.count = 1
         this.curCom = "";
         this.prevCom = [];
+        this.comms = this.makeCommandArray();
     } 
+    makeCommandArray(){
+        console.log(txt);
+        let com = txt.split("\n");
+        let ret = [];
+        com.forEach(function(item){
+            ret.push(item.split(":"))
+        })
+        console.log(ret);
+        return ret;
+    }
     getCommand(){
-        this.prevCom.push(this.curCom);
-        this.count = 1;
-        return this.curCom == "about" ? "Copyleft GPLv3 2019 | for more options type 'help'<br>"
-
-        :this.curCom =="contact" ? "contact: <br><a href='mailto:brianpritt@gmail.com'>brianpritt@gmail.com </a><br><a href='https://github.com/brianpritt'>GitHub</a><br>"
-        
-        :this.curCom =="help" ? "Available this.commands: about, contact, help<br>"
-
-        :this.curCom == "clear" ? document.getElementById("output").innerHTML = ""
-
-        :this.curCom == "games" ? "<li>Chess</li><li>Poker</li><li>Fighter Combat</li><li>Guerrilla Engagement</li><li>Desert Warfare</li><li>Air-To-Ground Actions</li><li>Theaterwide Tactical Warefare</li><li></li> <li>Theaterwide Biotoxic and Chemical Warfare</li><li></li><li>Global Thermonuclear War</li><br>"
-
-        :this.curCom == "global thermonuclear war" ? "Wouldn't you prefer a nice game of chess?<br>"
-        : "invalid command<br>";
+        let that = this;
+        let ret = ""
+        that.comms.forEach(function(item){
+            if(that.curCom.includes(item[0])){
+                console.log(item[1])
+                ret = item[1]
+            } 
+        })
+        return ret;
     }
     // how can this be more precise?
     keyCommands(){ 
