@@ -1,12 +1,14 @@
-import $ from'jquery';
-import txt from './../init.txt'
+
+import txt from './../init.ini'
 export class Initialize{
     constructor(){
         this.author = "",
         this.contact = "",
-        this.gitHub = "",
+        this.github = "",
+        this.githubLink = "",
         this.about = "",
-        this.title = ""
+        this.title = "",
+        this.init = ""
     }
     getInitFile(){
         let initInfo = txt.split("\n");

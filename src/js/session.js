@@ -1,4 +1,4 @@
-import txt from './../commands.txt'
+import txt from './../commands.ini'
 export class Session{
 
     constructor(){
@@ -9,50 +9,54 @@ export class Session{
         this.comms = this.makeCommandArray();
     } 
     makeCommandArray(){
-        console.log(txt);
         let com = txt.split("\n");
         let ret = [];
         com.forEach(function(item){
-            ret.push(item.split(":"))
+            ret.push(item.split("~"))
         })
-        console.log(ret);
         return ret;
     }
     getCommand(){
-        let that = this;
         let ret = ""
-        that.comms.forEach(function(item){
-            if(that.curCom.includes(item[0])){
-                console.log(item[1])
+        this.comms.forEach((item => {
+            if(this.curCom.includes(item[0])){
                 ret = item[1]
             } 
-        })
+        }))
+        this.prevCom.push(this.curCom)
         return ret;
     }
     // how can this be more precise?
-    keyCommands(){ 
-        console.log(this.keyDirection)
+    keyCommands(){
+        let ret = ""
         
+        console.log(this.keyDirection)
         if(this.keyDirection === 38){
-            let ret = this.prevCom[this.prevCom.length - this.count];
+            console.log(this.count, this.prevCom.length)
+            }
+            ret = this.prevCom[this.prevCom.length - this.count];
             this.count++;
             if (this.count >= this.prevCom.length){
                 this.count = this.prevCom.length;
-            }
+                
             if(this.count <=1){
-                return "";
+                ret = "";
             }
-            return ret;
+            
         }
         if(this.keyDirection === 40){
+            console.log(this.count, this.prevCom.length)
+            console.log(this.count)
             this.count--;
-                if (this.count < 1){
-                this.count = 1;
-                return "";
-            }
-            let ret = this.prevCom[this.prevCom.length- this.count];
-        return ret;
+                if (this.count <= 1){
+                    this.count = 1;
+                    ret =  "";
+                }
+            ret = this.prevCom[this.prevCom.length- this.count];
+     
         }
+    return ret;
     }
+
     
 }

@@ -32,7 +32,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.txt$/i,
+        test: /\.ini$/i,
         use: 'raw-loader',
       },
       {

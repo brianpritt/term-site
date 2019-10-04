@@ -30,3 +30,13 @@ li{
 .prompt{
     display:inline-block!important;
 }
+#black{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+/* #the-form{
+    display: none;
+} */
+.is-visible{
+    display: inline-block;
+}

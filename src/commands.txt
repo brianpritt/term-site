@@ -1,6 +1,0 @@
-about: Copyleft GPLv3 2019 | for more options type 'help'<br>
-contact: contact: <br><a href='mailto:brianpritt@gmail.com'>brianpritt@gmail.com </a><br><a href='https://github.com/brianpritt'>GitHub</a><br>
-help: Available this.commands: about, contact, help<br>
-clear: document.getElementById("output").innerHTML = ""
-games: <li>Chess</li><li>Poker</li><li>Fighter Combat</li><li>Guerrilla Engagement</li><li>Desert Warfare</li><li>Air-To-Ground Actions</li><li>Theaterwide Tactical Warefare</li><li></li> <li>Theaterwide Biotoxic and Chemical Warfare</li><li></li><li>Global Thermonuclear War</li><br>
-global thermonuclear war: Wouldn't you prefer a nice game of chess?<br>
