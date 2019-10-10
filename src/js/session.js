@@ -57,6 +57,4 @@ export class Session{
         }
     return ret;
     }
-
-    
 }

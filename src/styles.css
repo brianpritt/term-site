@@ -34,9 +34,10 @@ li{
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
 }
-/* #the-form{
+#the-form{
     display: none;
-} */
+    width: 90%
+}
 .is-visible{
     display: inline-block;
 }
