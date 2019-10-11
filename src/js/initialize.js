@@ -19,7 +19,7 @@ export class Initialize{
                 that[line[0]] = line[1]
             }
             else{
-                console.warn("init.txt contains invalid property type '" + line[0]+ "'")
+                console.warn("blsh: init.txt contains invalid property type '" + line[0]+ "'")
             }
         })
     }

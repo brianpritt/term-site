@@ -16,18 +16,27 @@ export class Actions{
                 i++
             }
             //POC // this is sloppy, clean it up
+            
+            // else if(tex.charAt(i)==="#"){
+            //     n = tex.
+            // }
             else if(tex.charAt(i) === "<"){
                 for(let x=i; x< tex.length;x++){
                     if(tex.charAt(x+1) === "a"){
-                        n = tex.slice(x,tex.indexOf("</a>"))
-                        i=tex.indexOf("</a>" +4);
+                        console.log(i)
+                        n = tex.slice(x,tex.indexOf("</a>")+ 4)
+                        console.log(x, tex.indexOf("</a>"), n)
+                        i=tex.indexOf("</a>"+3);
+                        
                         x=tex.length
+                        console.log(i, x, tex.indexOf("</a>" +4),tex)
                     }
                     if(tex.charAt(x)=== ">"){
                         n = tex.slice(i,x+1);
                         console.log(n)
                         i=x;
                         x=tex.length;
+                        console.log(i)
                     }
                 }
             }
