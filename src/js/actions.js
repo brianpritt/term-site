@@ -3,7 +3,6 @@ export class Actions{
         let prpt = document.getElementById("the-form");
         let n ="";
         prpt.style.display = "none";
-        
         // if(tex.charAt(i) == "`"){
         //     console.log(tex.length)
         //     let red = tex.slice(1, tex.length)
@@ -24,12 +23,12 @@ export class Actions{
                 for(let x=i; x< tex.length;x++){
                     if(tex.charAt(x+1) === "a"){
                         console.log(i)
-                        n = tex.slice(x,tex.indexOf("</a>")+ 4)
-                        console.log(x, tex.indexOf("</a>"), n)
-                        i=tex.indexOf("</a>"+3);
+                        n = tex.slice(x,tex.indexOf("</a>")+4)
+                        console.log(x, tex.indexOf("</a>"+3), n)
+                        i=tex.indexOf("</a>"+1);
                         
                         x=tex.length
-                        console.log(i, x, tex.indexOf("</a>" +4),tex)
+                        console.log(i, x, tex.indexOf("</a>"), tex.indexOf("<g>"),tex)
                     }
                     if(tex.charAt(x)=== ">"){
                         n = tex.slice(i,x+1);

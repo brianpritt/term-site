@@ -1,3 +1,4 @@
+//this is silly, but this class is pretty much a made up markdown language so i could parse thing from my .ini files the way i wanted to.
 export class Insertions{
     constructor(tag)
     {

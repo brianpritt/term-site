@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //build init obj
   let initialize = new Initialize;
   initialize.getInitFile(); 
+  console.log(initialize.contact, initialize.contact.lenght)
   
 
   //build ses obj

@@ -17,6 +17,7 @@ export class Session{
         return ret;
     }
     getCommand(){
+        console.log(this.comms)
         let ret = ""
         this.comms.forEach((item => {
             if(this.curCom.includes(item[0])){

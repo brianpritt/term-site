@@ -22,6 +22,7 @@ export class Initialize{
                 console.warn("blsh: init.txt contains invalid property type '" + line[0]+ "'")
             }
         })
+        
     }
 }
 
