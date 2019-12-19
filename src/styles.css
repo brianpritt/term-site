@@ -41,3 +41,10 @@ li{
 .is-visible{
     display: inline-block;
 }
+@media screen and (max-width: 400px){
+    body{
+        width:400px;
+        word-wrap: break-word;
+        font-size: 1.5em;
+    }
+}
