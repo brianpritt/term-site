@@ -14,7 +14,7 @@ export class Initialize{
         let initInfo = txt.split("\n");
         let that = this;
         initInfo.forEach(function(item){
-            let line = item.split(":");
+            let line = item.split(/:(.*)/);
             if(that.hasOwnProperty(line[0])){
                 that[line[0]] = line[1]
             }

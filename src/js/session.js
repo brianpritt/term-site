@@ -12,12 +12,12 @@ export class Session{
         let com = txt.split("\n");
         let ret = [];
         com.forEach(function(item){
-            ret.push(item.split("~"))
+            //matches first occurance of ":"
+            ret.push(item.split(/:(.*)/))
         })
         return ret;
     }
     getCommand(){
-        console.log(this.comms)
         let ret = ""
         this.comms.forEach((item => {
             if(this.curCom.includes(item[0])){
@@ -31,7 +31,6 @@ export class Session{
     keyCommands(){
         let ret = ""
         
-        console.log(this.keyDirection)
         if(this.keyDirection === 38){
             console.log(this.count, this.prevCom.length)
             }
@@ -46,8 +45,6 @@ export class Session{
             
         }
         if(this.keyDirection === 40){
-            console.log(this.count, this.prevCom.length)
-            console.log(this.count)
             this.count--;
                 if (this.count <= 1){
                     this.count = 1;

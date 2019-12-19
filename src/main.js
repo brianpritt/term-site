@@ -6,17 +6,12 @@ import { Initialize } from "./js/initialize";
 import { Actions } from "./js/actions";
 
 document.addEventListener("DOMContentLoaded", () => {
-  //build init obj
   let initialize = new Initialize;
   initialize.getInitFile(); 
-  console.log(initialize.contact, initialize.contact.lenght)
   
-
-  //build ses obj
   let thisSession = new Session;
   Actions.typing(0,initialize.init,"output")
-  // prompt.style.display="inline-block"
-  //attach event listener to arrow keys
+  
   document.onkeydown = function(key){  
     thisSession.keyDirection = key.keyCode
     if((thisSession.keyDirection === 38)|| thisSession.keyDirection === 40){
@@ -28,17 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault()
     thisSession.curCom = document.getElementById("black").value.toLowerCase();
 
-    // process command
-    var retu = "@localhost:: "+ thisSession.curCom+ " :  " + thisSession.getCommand();
-    var node = document.createElement("BR");
-    var out = document.getElementById("output");
-    
-    //add a promise here so input will not display again until typing is finished
-    node.style.display = "hide"
-    let x = Actions.typing(0, retu, "output")
-    console.log(x)
-    // hideInput(0,retu,"output")
-    out.appendChild(node);
+    if(thisSession.getCommand()[1] == "`"){
+      let com = thisSession.getCommand()
+      let jsCom = com.slice(2, com.length-1)
+      Actions.JsCommand(jsCom);
+    }
+    else{
+      var retu = " " +thisSession.curCom+ " :  " + thisSession.getCommand();
+      var node = document.createElement("BR");
+      var out = document.getElementById("output");
+      
+      node.style.display = "hide"
+      let x = Actions.typing(0, retu, "output")
+      
+      out.appendChild(node, node);
+    }
     document.getElementById("black").value = "";
   });
 });   

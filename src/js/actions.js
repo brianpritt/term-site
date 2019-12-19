@@ -3,53 +3,30 @@ export class Actions{
         let prpt = document.getElementById("the-form");
         let n ="";
         prpt.style.display = "none";
-        // if(tex.charAt(i) == "`"){
-        //     console.log(tex.length)
-        //     let red = tex.slice(1, tex.length)
-        //     red
-        //     console.log(red)
-        // }
         if(i < tex.length){
-            if(tex.charAt(i) === "\\" && tex.charAt(i+1) === "n"){
-                n = "<br>"
-                i++
+            //have this look for any element
+            if(i === tex.indexOf("<br>", i-1)){
+                n = "<br>";
+                i+=4;
             }
-            //POC // this is sloppy, clean it up
-            
-            // else if(tex.charAt(i)==="#"){
-            //     n = tex.
-            // }
-            else if(tex.charAt(i) === "<"){
-                for(let x=i; x< tex.length;x++){
-                    if(tex.charAt(x+1) === "a"){
-                        console.log(i)
-                        n = tex.slice(x,tex.indexOf("</a>")+4)
-                        console.log(x, tex.indexOf("</a>"+3), n)
-                        i=tex.indexOf("</a>"+1);
-                        
-                        x=tex.length
-                        console.log(i, x, tex.indexOf("</a>"), tex.indexOf("<g>"),tex)
-                    }
-                    if(tex.charAt(x)=== ">"){
-                        n = tex.slice(i,x+1);
-                        console.log(n)
-                        i=x;
-                        x=tex.length;
-                        console.log(i)
-                    }
-                }
+            else if(i === tex.indexOf("<a",i)){
+                let end = tex.indexOf("</a>", i);
+                n = tex.slice(i,end+4);
+                i = end+4;
             }
             else {
                 n = tex.charAt(i)
+                i++;
             }
-
             document.getElementById(location).innerHTML += n;
-            i++;
             setTimeout( ()=>
                  this.typing(i, tex,location), 20)
         }else {
         prpt.style.display = "inline"
-        console.log("in")
         }
-    }; 
+    };
+    static JsCommand(comm)
+    {
+        eval(comm)
+    } 
 }
