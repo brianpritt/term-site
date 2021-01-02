@@ -11,7 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
   
   let thisSession = new Session;
   Actions.typing(0,initialize.init,"output")
-  
+  document.getElementById("black").focus();
+  setInterval(function(){
+    window.scrollTo(0,document.body.scrollHeight);
+  },10);
   document.onkeydown = function(key){  
     thisSession.keyDirection = key.keyCode
     if((thisSession.keyDirection === 38)|| thisSession.keyDirection === 40){
